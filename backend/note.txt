@@ -1,0 +1,6 @@
+username : campusconnectteamlead
+password : 2pXJu5jSZfjxxKeU
+URL : mongodb+srv://campusconnectteamlead:2pXJu5jSZfjxxKeU@cluster0.xkaasjw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+APP password : jnwz lwzb vtbb came
+APP name : OTP
+revathi MONGO_URI = "mongodb+srv://satyarevathireddy:8cMNQ0YRM1CDBKsU@cluster0.qvhbfgy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";

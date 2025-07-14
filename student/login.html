@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #333;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    button:disabled {
+      background-color: #bbb;
+      cursor: not-allowed;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* Hide OTP field by default */
+    #otpContainer {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Student Login</h2>
+    <form>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required placeholder="Enter your email" />
+      </div>
+      <div class="text-center">
+        <button type="button" id="sendOtpBtn">Send OTP</button>
+      </div>
+
+      <!-- Initially hidden OTP input field -->
+      <div id="otpContainer">
+        <label for="otp">OTP:</label>
+        <input type="text" id="otp" required placeholder="Enter the OTP" />
+      </div>
+
+      <!-- Initially hidden Login button -->
+      <div class="text-center">
+        <button type="submit" id="loginBtn" disabled>Login</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Send OTP button event listener
+    document.getElementById("sendOtpBtn").addEventListener("click", function() {
+      const email = document.getElementById("email").value;
+      if (email) {
+        // Show OTP input field and Login button
+        document.getElementById("otpContainer").style.display = "block";
+        document.getElementById("loginBtn").style.display = "block";
+        document.getElementById("otp").focus();
+        alert("OTP has been sent to your email.");
+      } else {
+        alert("Please enter a valid email.");
+      }
+    });
+
+    // Listen for OTP input
+    document.getElementById("otp").addEventListener("input", function() {
+      const otpValue = document.getElementById("otp").value;
+      const loginBtn = document.getElementById("loginBtn");
+
+      // Enable the Login button only if OTP is not empty
+      if (otpValue) {
+        loginBtn.disabled = false;
+      } else {
+        loginBtn.disabled = true;
+      }
+    });
+  </script>
+</body>
+</html>

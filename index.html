@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canteen Feedback System</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Basic Reset */
+    body, h1, p, button {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Page Layout */
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 0;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    /* Login Buttons Section */
+    .login-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .login-buttons a {
+      text-decoration: none;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1rem;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    button:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Canteen Feedback System</h1>
+    <p>Please select your login type:</p>
+  </header>
+  
+  <section class="login-buttons">
+    <a href="student/login.html">
+      <button aria-label="Student Login">Student Login</button>
+    </a>
+    <a href="employee/login.html">
+      <button aria-label="Employee Login">Employee Login</button>
+    </a>
+  </section>
+</body>
+</html>
